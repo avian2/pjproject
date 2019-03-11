@@ -42,6 +42,8 @@ libpjmedia-codec.so.2 libpjmedia-codec2 #MINVER#
  pjmedia_codec_g722_set_pcm_shift@Base 2.5.5~dfsg
  pjmedia_codec_gsm_deinit@Base 2.5.5~dfsg
  pjmedia_codec_gsm_init@Base 2.5.5~dfsg
+ pjmedia_codec_ilbc_deinit@Base 2.7.2-1tomaz1
+ pjmedia_codec_ilbc_init@Base 2.7.2-1tomaz1
  pjmedia_codec_l16_deinit@Base 2.5.5~dfsg
  pjmedia_codec_l16_init@Base 2.5.5~dfsg
  pjmedia_codec_opencore_amr_deinit@Base 2.5.5~dfsg

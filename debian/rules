@@ -88,6 +88,9 @@ override_dh_shlibdeps:
 	  --override 's/libopus0-dev/libopus-dev/' \
 	  --override 's/libvo-amrwbenc0-dev/libvo-amrwbenc-dev/' \
 	  --override 's/libsrtp2-1-dev/libsrtp2-dev/' \
+	  --override 's/libg7221codec2-dev//' \
+	  --override 's/libilbccodec2-dev//' \
+	  --override 's/libresample2-dev//' \
 	  debian/libpjproject-dev.substvars debian/lib*/usr/lib/*/lib*.so.*
 
 .PHONY: build

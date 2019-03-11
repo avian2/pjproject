@@ -1,0 +1,94 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export CFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS; dpkg-buildflags --get CFLAGS)
+# export _CXXFLAGS includes $(_CFLAGS)
+#CXXFLAGS:=$(shell dpkg-buildflags --get CPPFLAGS; dpkg-buildflags --get CXXFLAGS)
+export LDFLAGS:=$(shell dpkg-buildflags --get LDFLAGS)
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+pybuild = pybuild -d pjsip-apps/src/python --pyver 2.7
+
+# FIXME: the explicit and duplicate 'build' target is because of the
+# existing directory 'build'. .PHONY doesn't seem to be good enough with
+# the wildcard target. Any better way?
+%:
+	dh $@ --with python2,pkgkde_symbolshelper
+build:
+	dh $@ --with python2,pkgkde_symbolshelper
+
+override_dh_autoreconf:
+	dh_autoreconf autoconf aconfigure.ac >aconfigure
+
+override_dh_auto_clean:
+	# Handle the case where the source tree is not configured.
+	if test -f build.mak; then make distclean; fi
+	rm -rf .pybuild
+	# left-overs from the tests:
+	find tests/pjsua/ -name \*.pyc | xargs --no-run-if-empty rm
+	rm -rf tests/pjsua/logs/ tests/pjsua/wavs/
+	dh_clean
+
+override_dh_auto_configure:
+	cp debian/config_site.h pjlib/include/pj/
+ifneq (,$(wildcard third-party/ilbc/iLBC_decode.c))
+	# Sanity check for one of the third party libraries we need to
+	# remove from the source tree
+	@echo "iLBC was not removed. Exiting"; exit 1
+endif
+	dh_auto_configure -- --enable-shared \
+		--disable-g7221-codec --disable-ilbc-codec --disable-resample \
+		--with-external-gsm --with-external-speex --with-external-pa \
+		--with-external-srtp --enable-video --disable-libyuv \
+		--disable-libwebrtc
+
+override_dh_auto_build:
+	dh_auto_build --no-parallel -- dep all
+	$(pybuild)
+
+# selftest target takes too long. Parts of it may also require hardware.
+# Don't enable it by default. Allow running it manually.
+#override_dh_auto_test:
+run-tests:
+	LD_LIBRARY_PATH=`echo $$PWD/*/lib | tr ' ' :` make selftest
+
+PC_FILE=$(CURDIR)/debian/tmp/usr/lib/*/pkgconfig/libpjproject.pc
+pythn_mod=$(CURDIR)/debian/tmp/usr/lib/python2.7/dist-packages/_pjsua.so
+headers_names=m_auto.h os_auto.h
+headers_sub_dir=pj/compat
+headers_base=$(CURDIR)/debian/tmp/usr/include
+headers_dir=$(headers_base)/$(headers_sub_dir)
+headers=$(headers_names:%=$(headers_dir)/%)
+override_dh_auto_install:
+	dh_auto_install
+	# Disable it for now. This will wait (and be done properly) in
+	# later versions:
+	$(pybuild) --install
+	ma=`dpkg-architecture -qDEB_BUILD_MULTIARCH`; \
+	  new_name=`echo $(pythn_mod) | sed -e "s|\.so$$|.$$ma&|"`; \
+	  mv $(pythn_mod) $$new_name
+	# FIXME: the proper fix is in the generation of libpjproject.pc.in:
+	# PJ_INSTALL_CXXFLAGS (which is basically CFLAGS) should not be used
+	# as-is. Maybe it should just be avoided and a hand-crafted set
+	# of build flags should be used. But for now let's edit out harmful
+	# flags:
+	sed -i \
+		-e "s|$$CFLAGS||" -e "s|$$CPPFLAGS||" -e 's|-fPIC||' \
+	       	$(PC_FILE)
+	# Some headers are architecture-dependent. For now, move them manually:
+	ma=`dpkg-architecture -qDEB_BUILD_MULTIARCH`; \
+	  new_dir=$(headers_base)/$$ma/$(headers_sub_dir); \
+	  mkdir -p $$new_dir; \
+	  mv $(headers) $$new_dir/
+
+override_dh_shlibdeps:
+	dh_shlibdeps
+	d-devlibdeps \
+	  --override 's/libopus0-dev/libopus-dev/' \
+	  --override 's/libvo-amrwbenc0-dev/libvo-amrwbenc-dev/' \
+	  --override 's/libsrtp2-1-dev/libsrtp2-dev/' \
+	  debian/libpjproject-dev.substvars debian/lib*/usr/lib/*/lib*.so.*
+
+.PHONY: build

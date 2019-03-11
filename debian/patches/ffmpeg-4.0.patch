@@ -1,0 +1,22 @@
+Description: Fix FTBFS with FFmpeg 4.0
+Author: James Cowgill <jcowgill@debian.org>
+Bug-Debian: https://bugs.debian.org/888360
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/pjmedia/src/pjmedia-codec/ffmpeg_vid_codecs.c
++++ b/pjmedia/src/pjmedia-codec/ffmpeg_vid_codecs.c
+@@ -1704,12 +1704,12 @@ static pj_status_t ffmpeg_codec_decode_w
+     avpacket.size = (int)input->size;
+ 
+     /* ffmpeg warns:
+-     * - input buffer padding, at least FF_INPUT_BUFFER_PADDING_SIZE
++     * - input buffer padding, at least AV_INPUT_BUFFER_PADDING_SIZE
+      * - null terminated
+      * Normally, encoded buffer is allocated more than needed, so lets just
+      * bzero the input buffer end/pad, hope it will be just fine.
+      */
+-    pj_bzero(avpacket.data+avpacket.size, FF_INPUT_BUFFER_PADDING_SIZE);
++    pj_bzero(avpacket.data+avpacket.size, AV_INPUT_BUFFER_PADDING_SIZE);
+ 
+     output->bit_info = 0;
+     output->timestamp = input->timestamp;

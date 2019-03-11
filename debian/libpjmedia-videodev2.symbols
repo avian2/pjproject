@@ -1,0 +1,40 @@
+# SymbolsHelper-Confirmed: 2.5.1~dfsg amd64
+libpjmedia-videodev.so.2 libpjmedia-videodev2 #MINVER#
+ pjmedia_avi_dev_alloc@Base 2.5.5~dfsg
+ pjmedia_avi_dev_create_factory@Base 2.5.5~dfsg
+ pjmedia_avi_dev_free@Base 2.5.5~dfsg
+ pjmedia_avi_dev_get_param@Base 2.5.5~dfsg
+ pjmedia_avi_dev_param_default@Base 2.5.5~dfsg
+ pjmedia_cbar_factory@Base 2.5.5~dfsg
+ pjmedia_sdl_factory@Base 2.5.5~dfsg
+ (arch=!hurd-any)pjmedia_v4l2_factory@Base 2.5.5~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_cap_name@Base 2.3~dfsg
+ pjmedia_vid_dev_conv_create_converter@Base 2.5.5~dfsg
+ pjmedia_vid_dev_conv_destroy_converter@Base 2.5.5~dfsg
+ pjmedia_vid_dev_conv_resize_and_rotate@Base 2.5.5~dfsg
+ pjmedia_vid_dev_conv_set_rotation@Base 2.5.5~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_count@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_default_param@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_get_global_index@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_get_info@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_get_local_index@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_lookup@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_param_get_cap@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_param_set_cap@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_refresh@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_create@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_destroy@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_get_cap@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_get_frame@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_get_param@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_is_running@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_put_frame@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_set_cap@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_start@Base 2.3~dfsg
+#MISSING: 2.5.1~dfsg# pjmedia_vid_dev_stream_stop@Base 2.3~dfsg
+ pjmedia_vid_dev_subsys_get_pool_factory@Base 2.5.5~dfsg
+ pjmedia_vid_dev_subsys_init@Base 2.5.5~dfsg
+ pjmedia_vid_dev_subsys_shutdown@Base 2.5.5~dfsg
+ pjmedia_vid_register_factory@Base 2.5.5~dfsg
+ pjmedia_vid_unregister_factory@Base 2.5.5~dfsg
+ pjmedia_videodev_strerror@Base 2.5.5~dfsg

@@ -1,0 +1,52 @@
+git-dpm
+=======
+The package uses git-dpm.
+
+See git-dpm(1) and git-dpm --help
+
+Quick notes:
+
+* Normally (when in the master branch) you have patches under
+  debian/patches. But they are also merged in the tree, and thus no need
+  to use quilt (explicitly or implicitly). Just build.
+
+    debuild -I
+
+* To upgrade to newer upstream source, use:
+
+   uscan
+
+   git-dpm import-new-upstream --ptc --rebase ../new-stuff.orig.tar.gz
+
+* To update the patches in the packaging branch, use:
+
+   git-dpm checkout-patched
+
+  Update the branch. When done:
+
+   git-dpm update-patches
+
+* The problem with gbp pq (in the standard flow) is that you lose your
+  hostory. The problem with git-dpm is that you keep all of your history.
+
+
+Tests
+=====
+The build-time tests take over an hour to run and are thus disabled.
+To run them:
+
+  ./debian/rules build
+  ./debian/rules run-tests
+
+Or run specific tests. The specific targets are:
+
+  $ grep ^selftest: Makefile 
+  selftest: pjlib-test pjlib-util-test pjnath-test pjmedia-test pjsip-test pjsua-test
+However you need to set LD_LIBRARY_PATH in order to run them:
+
+  LD_LIBRARY_PATH=`echo $$PWD/*/lib | tr ' ' :` make test-foo
+
+Note that the pjmedia test may use your local hardware (X11 display,
+webcam).
+
+At the moment pjmedia-test and pjsua-test fail.

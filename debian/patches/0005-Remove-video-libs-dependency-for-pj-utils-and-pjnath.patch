@@ -1,0 +1,45 @@
+From: Tzafrir Cohen <tzafrir@debian.org>
+Date: Fri, 31 Oct 2014 23:14:49 +0200
+Subject: Remove video libs dependency for pj-utils and pjnath
+
+The video LD flags were duplicated on the app LD flags and the HOST
+LD flags. Remove them from the app LD flags. Remove HOST_LDFLAGS for
+some projects.
+---
+ build.mak.in              | 1 -
+ pjlib-util/build/Makefile | 2 +-
+ pjnath/build/Makefile     | 2 +-
+ 3 files changed, 2 insertions(+), 3 deletions(-)
+
+--- a/build.mak.in
++++ b/build.mak.in
+@@ -213,7 +213,6 @@
+ 	-L$(PJDIR)/pjmedia/lib\
+ 	-L$(PJDIR)/pjsip/lib\
+ 	-L$(PJDIR)/third_party/lib\
+-	$(PJ_VIDEO_LDFLAGS) \
+ 	@LDFLAGS@
+ export APP_LDXXFLAGS := $(APP_LDFLAGS)
+ 
+--- a/pjlib-util/build/Makefile
++++ b/pjlib-util/build/Makefile
+@@ -28,7 +28,7 @@
+ 		   $(CFLAGS) $(CC_INC)../include $(CC_INC)../../pjlib/include
+ export _CXXFLAGS:= $(_CFLAGS) $(CC_CXXFLAGS) $(OS_CXXFLAGS) $(M_CXXFLAGS) \
+ 		   $(HOST_CXXFLAGS) $(CXXFLAGS)
+-export _LDFLAGS := $(CC_LDFLAGS) $(OS_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \
++export _LDFLAGS := $(CC_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \
+ 		   $(APP_LDFLAGS) $(LDFLAGS)
+ 
+ ###############################################################################
+--- a/pjnath/build/Makefile
++++ b/pjnath/build/Makefile
+@@ -30,7 +30,7 @@
+ 		   $(CC_INC)../../pjlib-util/include
+ export _CXXFLAGS:= $(_CFLAGS) $(CC_CXXFLAGS) $(OS_CXXFLAGS) $(M_CXXFLAGS) \
+ 		   $(HOST_CXXFLAGS) $(CXXFLAGS)
+-export _LDFLAGS := $(CC_LDFLAGS) $(OS_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \
++export _LDFLAGS := $(CC_LDFLAGS) $(M_LDFLAGS) $(HOST_LDFLAGS) \
+ 		   $(APP_LDFLAGS) $(LDFLAGS) 
+ 
+ ###############################################################################

@@ -1,0 +1,5 @@
+0003-Reduce-number-of-libraries-linked-with-pjmedia.patch
+0004-Enable-building-python-bindings.patch
+0005-Remove-video-libs-dependency-for-pj-utils-and-pjnath.patch
+0007-add-v5-suffix-to-soname-of-libpjsua2-2.patch
+ffmpeg-4.0.patch

@@ -1,0 +1,35 @@
+From: Tzafrir Cohen <tzafrir@debian.org>
+Date: Thu, 5 Nov 2015 04:55:06 +0200
+Subject: add 'v5' suffix to soname of libpjsua2-2
+
+pjsua2 is a C++ library and its SONAME needs to be bumped as its ABI has
+changed with GCC 5 (using C++11 ABI).
+
+Remove this patch once the ABI for all libraries has been bumped.
+---
+ build.mak.in         | 2 +-
+ pjsip/build/Makefile | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+--- a/build.mak.in
++++ b/build.mak.in
+@@ -279,7 +279,7 @@
+ 
+ APP_LIB_FILES += $(ADD_LIB_FILES)
+ 
+-APP_LIBXX_FILES += $(PJ_DIR)/pjsip/lib/libpjsua2.$(SHLIB_SUFFIX).$(PJ_VERSION_MAJOR) $(PJ_DIR)/pjsip/lib/libpjsua2.$(SHLIB_SUFFIX) \
++APP_LIBXX_FILES += $(PJ_DIR)/pjsip/lib/libpjsua2.$(SHLIB_SUFFIX).$(PJ_VERSION_MAJOR)v5 $(PJ_DIR)/pjsip/lib/libpjsua2.$(SHLIB_SUFFIX) \
+ 	$(ADD_LIB_FILES)
+ endif
+ 
+--- a/pjsip/build/Makefile
++++ b/pjsip/build/Makefile
+@@ -34,7 +34,7 @@
+ export PJSUA_LIB_SONAME := libpjsua.$(SHLIB_SUFFIX)
+ export PJSUA_LIB_SHLIB := $(PJSUA_LIB_SONAME).$(PJ_VERSION_MAJOR)
+ export PJSUA2_LIB_SONAME := libpjsua2.$(SHLIB_SUFFIX)
+-export PJSUA2_LIB_SHLIB := $(PJSUA2_LIB_SONAME).$(PJ_VERSION_MAJOR)
++export PJSUA2_LIB_SHLIB := $(PJSUA2_LIB_SONAME).$(PJ_VERSION_MAJOR)v5
+ endif
+ 
+ ###############################################################################

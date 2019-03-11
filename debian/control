@@ -1,0 +1,250 @@
+Source: pjproject
+Section: libs
+Priority: optional
+Maintainer: Debian VoIP Team <pkg-voip-maintainers@lists.alioth.debian.org>
+Uploaders: Jeremy Lainé <jeremy.laine@m4x.org>,
+ Jonas Smedegaard <dr@jones.dk>,
+ Tzafrir Cohen <tzafrir@debian.org>,
+ Bernhard Schmidt <berni@debian.org>
+Build-Depends:
+ debhelper (>= 10),
+ dh-python,
+ d-shlibs (>= 0.71~),
+ libavcodec-dev,
+ libavdevice-dev,
+ libavformat-dev,
+ libavutil-dev,
+ libgsm1-dev,
+ libopencore-amrnb-dev,
+ libopencore-amrwb-dev,
+ libopus-dev,
+ liboss4-salsa-dev [kfreebsd-any],
+ libsdl2-dev,
+ libspeex-dev, libspeexdsp-dev,
+ libsrtp2-dev,
+ libssl-dev,
+ libswscale-dev,
+ libv4l-dev [!hurd-any],
+ libvo-amrwbenc-dev,
+ libwebrtc-audio-processing-dev,
+ pkg-kde-tools,
+ portaudio19-dev,
+ python-dev,
+ uuid-dev
+Standards-Version: 4.1.1
+Homepage: http://www.pjsip.org/
+Vcs-Git: https://salsa.debian.org/pkg-voip-team/pjproject.git
+Vcs-Browser: https://salsa.debian.org/pkg-voip-team/pjproject
+
+Package: libpjlib-util2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - helper utilities
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes helper utilities for the PJ Project libraries.
+
+Package: libpjmedia-audiodev2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - Audio devices
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes an audio devices handling library.
+
+Package: libpjmedia-codec2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - Multimedia codecs handling
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a multimedia codecs handling library.
+
+Package: libpjmedia-videodev2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: SIP handling library - video devices
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a video devices handling library.
+
+Package: libpjmedia2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - VoIP media
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a VoIP media handling library.
+
+Package: libpjnath2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - NAT handling
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a NAT handling library.
+
+Package: libpjsip-simple2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - SIP SIMPLE instant messaging
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a SIP SIMPLE Instant Messaging library.
+
+Package: libpjsip-ua2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: SIP handling library - SIP user agent library
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a SIP user agent handling library
+
+Package: libpjsip2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Breaks: asterisk (<< 1:13.17.2~dfsg-2~)
+Description: PJ Project - SIP handling library
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a SIP handling library.
+
+Package: libpjsua2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - Basic VoIP client library
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes a framework for a VoIP client (pjsua)
+
+Package: libpjsua2-2v5
+Architecture: linux-any
+Multi-Arch: same
+Breaks: libpjsua2-2
+Replaces: libpjsua2-2
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - Basic VoIP client library
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes version 2 of a framework for a VoIP client (pjsua2).
+
+Package: libpj2
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - PJProject core libraries
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes the PJ Project core libraries.
+
+Package: libpjproject-dev
+Architecture: linux-any
+Multi-Arch: same
+Section: libdevel
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, ${devlibs:Depends},
+ libavdevice-dev,
+ libpjlib-util2 (= ${binary:Version}),
+ libpjmedia-audiodev2 (= ${binary:Version}),
+ libpjmedia-codec2 (= ${binary:Version}),
+ libpjmedia-videodev2 (= ${binary:Version}),
+ libpjmedia2 (= ${binary:Version}),
+ libpjnath2 (= ${binary:Version}),
+ libpjsip-simple2 (= ${binary:Version}),
+ libpjsip-ua2 (= ${binary:Version}),
+ libpjsip2 (= ${binary:Version}),
+ libpjsua2 (= ${binary:Version}),
+ libpjsua2-2v5 (= ${binary:Version}),
+ libpj2 (= ${binary:Version}),
+Description: PJ Project - development headers
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes the development headers for PJ Project.
+
+Package: python-pjproject
+Architecture: linux-any
+Section: python
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}, ${python:Depends}
+Description: PJ Project - Python bindings
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.
+ .
+ This package includes the Python bindings.

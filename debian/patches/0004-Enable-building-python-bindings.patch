@@ -1,0 +1,18 @@
+From: Tzafrir Cohen <tzafrir@debian.org>
+Date: Thu, 30 Oct 2014 08:09:44 +0200
+Subject: Enable building python bindings
+
+---
+ Makefile | 1 +
+ 1 file changed, 1 insertion(+)
+
+--- a/Makefile
++++ b/Makefile
+@@ -4,6 +4,7 @@
+ include version.mak
+ 
+ LIB_DIRS = pjlib/build pjlib-util/build pjnath/build third_party/build pjmedia/build pjsip/build
++EXTRA_DIRS = pjsip-apps/src/python
+ DIRS = $(LIB_DIRS) pjsip-apps/build $(EXTRA_DIRS)
+ 
+ ifdef MINSIZE

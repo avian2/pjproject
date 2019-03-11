@@ -1,0 +1,44 @@
+* An embedded (forked, modified) copy of getopt.
+* Some build warnings.
+* Still some unnecessary libraries in link command:
+
+awk '/dpkg-shlibdeps: warning: package could avoid a useless dependency/ {print $10,$15}' ../pjproject_2.1.0~ast20130801-1_amd64.build
+debian/libpjlib-util2/usr/lib/libpjlib-util.so.2 libm.so.6
+debian/libpjlib-util2/usr/lib/libpjlib-util.so.2 librt.so.1
+debian/libpjlib-util2/usr/lib/libpjlib-util.so.2 libpthread.so.0
+debian/libpjmedia-audiodev2/usr/lib/libpjmedia-audiodev.so.2 libm.so.6
+debian/libpjmedia-audiodev2/usr/lib/libpjmedia-audiodev.so.2 librt.so.1
+debian/libpjmedia-audiodev2/usr/lib/libpjmedia-audiodev.so.2 libpthread.so.0
+debian/libpjmedia-audiodev2/usr/lib/libpjmedia-audiodev.so.2 libsrtp.so.0
+debian/libpjmedia-codec2/usr/lib/libpjmedia-codec.so.2 libm.so.6
+debian/libpjmedia-codec2/usr/lib/libpjmedia-codec.so.2 librt.so.1
+debian/libpjmedia-codec2/usr/lib/libpjmedia-codec.so.2 libsrtp.so.0
+debian/libpjmedia-codec2/usr/lib/libpjmedia-codec.so.2 libpthread.so.0
+debian/libpjmedia-videodev2/usr/lib/libpjmedia-videodev.so.2 libm.so.6
+debian/libpjmedia-videodev2/usr/lib/libpjmedia-videodev.so.2 libpj.so.2
+debian/libpjmedia-videodev2/usr/lib/libpjmedia-videodev.so.2 librt.so.1
+debian/libpjmedia-videodev2/usr/lib/libpjmedia-videodev.so.2 libpthread.so.0
+debian/libpjmedia-videodev2/usr/lib/libpjmedia-videodev.so.2 libsrtp.so.0
+debian/libpjmedia2/usr/lib/libpjmedia.so.2 libpjmedia-videodev.so.2
+debian/libpjmedia2/usr/lib/libpjmedia.so.2 librt.so.1
+debian/libpjmedia2/usr/lib/libpjmedia.so.2 libpthread.so.0
+debian/libpjnath2/usr/lib/libpjnath.so.2 libm.so.6
+debian/libpjnath2/usr/lib/libpjnath.so.2 librt.so.1
+debian/libpjnath2/usr/lib/libpjnath.so.2 libpthread.so.0
+debian/libpjsip-simple2/usr/lib/libpjsip-simple.so.2 libm.so.6
+debian/libpjsip-simple2/usr/lib/libpjsip-simple.so.2 librt.so.1
+debian/libpjsip-simple2/usr/lib/libpjsip-simple.so.2 libsrtp.so.0
+debian/libpjsip-simple2/usr/lib/libpjsip-simple.so.2 libpthread.so.0
+debian/libpjsip-ua2/usr/lib/libpjsip-ua.so.2 libm.so.6
+debian/libpjsip-ua2/usr/lib/libpjsip-ua.so.2 librt.so.1
+debian/libpjsip-ua2/usr/lib/libpjsip-ua.so.2 libpthread.so.0
+debian/libpjsip-ua2/usr/lib/libpjsip-ua.so.2 libsrtp.so.0
+debian/libpjsip2/usr/lib/libpjsip.so.2 libm.so.6
+debian/libpjsip2/usr/lib/libpjsip.so.2 librt.so.1
+debian/libpjsip2/usr/lib/libpjsip.so.2 libpthread.so.0
+debian/libpjsip2/usr/lib/libpjsip.so.2 libsrtp.so.0
+debian/libpjsua2/usr/lib/libpjsua.so.2 libpjmedia-videodev.so.2
+debian/libpjsua2/usr/lib/libpjsua.so.2 libm.so.6
+debian/libpjsua2/usr/lib/libpjsua.so.2 librt.so.1
+debian/libpjsua2/usr/lib/libpjsua.so.2 libpthread.so.0
+debian/libpjsua2/usr/lib/libpjsua.so.2 libsrtp.so.0

@@ -1,0 +1,17 @@
+*.debhelper
+*.debhelper.log
+*.substvars
+/files
+/libpj2/
+/libpjlib-util2/
+/libpjmedia-audiodev2/
+/libpjmedia-codec2/
+/libpjmedia-videodev2/
+/libpjmedia2/
+/libpjnath2/
+/libpjproject-dev/
+/libpjsip-simple2/
+/libpjsip-ua2/
+/libpjsip2/
+/libpjsua2/
+/tmp/

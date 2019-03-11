@@ -39,7 +39,6 @@ ifneq (,$(wildcard third-party/ilbc/iLBC_decode.c))
 	@echo "iLBC was not removed. Exiting"; exit 1
 endif
 	dh_auto_configure -- --enable-shared \
-		--disable-g7221-codec --disable-ilbc-codec --disable-resample \
 		--with-external-gsm --with-external-speex --with-external-pa \
 		--with-external-srtp --enable-video --disable-libyuv \
 		--disable-libwebrtc

@@ -247,3 +247,15 @@ Description: PJ Project - Python bindings
  from desktops, embedded systems, to mobile handsets.
  .
  This package includes the Python bindings.
+
+Package: libpjproject-thirdparty
+Architecture: linux-any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${misc:Pre-Depends}, ${shlibs:Depends}
+Description: PJ Project - proprietary and third-party components
+ PJSIP (a.k.a PJProject) is a multimedia communication library written
+ in C language implementing standard based protocols such as SIP, SDP,
+ RTP, STUN, TURN, and ICE. It combines signaling protocol (SIP) with rich
+ multimedia framework and NAT traversal functionality into high level API
+ that is portable and suitable for almost any type of systems ranging
+ from desktops, embedded systems, to mobile handsets.

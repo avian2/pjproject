@@ -26,7 +26,6 @@ Build-Depends:
  libswscale-dev,
  libv4l-dev [!hurd-any],
  libvo-amrwbenc-dev,
- libwebrtc-audio-processing-dev,
  pkg-kde-tools,
  portaudio19-dev,
  python-dev,

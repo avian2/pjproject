@@ -1,3 +1,9 @@
+pjproject (2.7.2-1tomaz2) unstable; urgency=medium
+
+  * Fix aconfigure perms.
+
+ -- Tomaz Solc <tomaz.solc@tablix.org>  Tue, 12 Mar 2019 10:34:46 +0100
+
 pjproject (2.7.2-1tomaz1) unstable; urgency=medium
 
   * Compile from upstream source, including non-free codecs.

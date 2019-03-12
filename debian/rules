@@ -21,6 +21,7 @@ build:
 
 override_dh_autoreconf:
 	dh_autoreconf autoconf aconfigure.ac >aconfigure
+	chmod 755 aconfigure
 
 override_dh_auto_clean:
 	# Handle the case where the source tree is not configured.

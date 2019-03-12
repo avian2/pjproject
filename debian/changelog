@@ -1,3 +1,9 @@
+pjproject (2.7.2-1tomaz3) unstable; urgency=medium
+
+  * Don't build PortAudio support.
+
+ -- Tomaz Solc <tomaz.solc@tablix.org>  Tue, 12 Mar 2019 11:04:18 +0100
+
 pjproject (2.7.2-1tomaz2) unstable; urgency=medium
 
   * Fix aconfigure perms.

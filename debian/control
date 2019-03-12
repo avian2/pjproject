@@ -27,7 +27,6 @@ Build-Depends:
  libv4l-dev [!hurd-any],
  libvo-amrwbenc-dev,
  pkg-kde-tools,
- portaudio19-dev,
  python-dev,
  uuid-dev
 Standards-Version: 4.1.1

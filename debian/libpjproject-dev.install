@@ -1,5 +1,5 @@
 usr/include/pj*
 usr/include/*/pj/compat/*.h
-usr/lib/*/libpj*.so
-usr/lib/*/libpj*.a
+usr/lib/*/lib*.so
+usr/lib/*/lib*.a
 usr/lib/*/pkgconfig/libpjproject.pc

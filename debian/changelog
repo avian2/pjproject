@@ -1,3 +1,9 @@
+pjproject (2.7.2-1tomaz4) unstable; urgency=medium
+
+  * Fix symlinks for third-party libs in libpjproject-dev.
+
+ -- Tomaz Solc <tomaz.solc@tablix.org>  Tue, 26 Mar 2019 08:24:24 +0100
+
 pjproject (2.7.2-1tomaz3) unstable; urgency=medium
 
   * Don't build PortAudio support.

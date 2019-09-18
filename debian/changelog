@@ -1,3 +1,9 @@
+pjproject (2.7.2-1tomaz5) unstable; urgency=medium
+
+  * Build with git-buildpackage.
+
+ -- Tomaz Solc <tomaz.solc@tablix.org>  Wed, 18 Sep 2019 09:38:41 +0100
+
 pjproject (2.7.2-1tomaz4) unstable; urgency=medium
 
   * Fix symlinks for third-party libs in libpjproject-dev.
